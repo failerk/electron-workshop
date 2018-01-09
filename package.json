@@ -1,0 +1,31 @@
+{
+  "name": "electron-workshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package:osx": "electron-packager . --platform=darwin --arch=x64",
+    "package:win64": "electron-packager . --platform=win32 --arch=x64",
+    "package:win32": "electron-packager . --platform=win32 --arch=ia32",
+    "package:linux": "electron-packager . --platform=linux --arch=x64",
+    "test": "npm run test:main && npm run test:renderer",
+    "test:main": "electron-mocha ./tests/main/*.spec.js --reporter spec --colors",
+    "test:renderer": "electron-mocha ./tests/renderer/*.spec.js --renderer --reporter spec --colors"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "devtron": "^1.4.0",
+    "electron": "^1.8.2-beta.3",
+    "electron-mocha": "^5.0.0",
+    "electron-packager": "^10.1.1"
+  },
+  "dependencies": {
+    "axios": "^0.17.1",
+    "electron-is-dev": "^0.3.0",
+    "electron-reload": "^1.2.2"
+  }
+}
